@@ -6,7 +6,7 @@ public class Empleado {
 
     private int codigo;
     private String nombre;
-    private Departamento departamento;
+    private String departamento;
     private double salario;
     private String desempeño;
     private String tipo;
@@ -14,7 +14,7 @@ public class Empleado {
 
     // Constructores, getters y setters
 
-    public void crearEmpleado() {
+    public Empleado(int codE, String nomE, String dep, double sal, String des, String tip, Date fecha) {
         // Lógica para crear un nuevo empleado
     }
 

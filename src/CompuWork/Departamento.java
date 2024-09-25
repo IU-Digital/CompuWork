@@ -5,12 +5,9 @@ public class Departamento {
         private int codigo;
         private String nombre;
 
-        // Constructor, getters y setters
-
-        public void crearDepartamento(int cod, String nom) {
-            // Lógica para crear un nuevo departamento
-            codigo = cod;
-            nombre = nom;
+        public Departamento(int codD, String nomD) {
+                codigo = codD;
+                nombre = nomD;
         }
 
         public void modificarDepartamento() {
