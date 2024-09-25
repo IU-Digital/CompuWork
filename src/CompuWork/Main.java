@@ -6,6 +6,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         int n;
+        Empleado[] ListaEmpleados = new Empleado[10];
+        Departamento[] ListaDepartamentos = new Departamento[10];
+
 
         System.out.println("\n Bienvenido a CompuWork");
         System.out.println("\n Seleccione una opción");
@@ -18,6 +21,7 @@ public class Main {
         switch (n) {
             case 1:
                 System.out.println("\n Creando Departamento");
+
                 break;
             case 2:
                 System.out.println("\n Creando Empleado");
