@@ -1,4 +1,5 @@
 package CompuWork;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +14,12 @@ public class Main {
         ArrayList<Departamento> ListaDepartamentos = new ArrayList<>();
         ArrayList<ReporteDesempeno> ListaReportes = new ArrayList<>();
 
-
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new CompuWorkGUI().setVisible(true);
+            }
+        });
 
         while (flag) {
 
