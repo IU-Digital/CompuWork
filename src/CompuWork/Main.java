@@ -13,6 +13,8 @@ public class Main {
         ArrayList<Departamento> ListaDepartamentos = new ArrayList<>();
         ArrayList<ReporteDesempeno> ListaReportes = new ArrayList<>();
 
+
+
         while (flag) {
 
             System.out.println("\n ***** Bienvenido a CompuWork *****");
@@ -34,7 +36,10 @@ public class Main {
                     System.out.println("\n ingrese nombre del departamento:");
                     String nomD = sc.next();
 
-                    Departamento D = new Departamento(codD, nomD);
+                    System.out.println("\n ingrese nombre del Jefe:");
+                    String jefeD = sc.next();
+
+                    Departamento D = new Departamento(codD, nomD, jefeD);
 
                     ListaDepartamentos.add(D);
 

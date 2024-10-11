@@ -4,9 +4,9 @@ public class Departamento {
 
         private int codigo;
         private String nombre;
-        private Empleado JefeDepartamento;
+        private String JefeDepartamento;
 
-        public Departamento(int codD, String nomD, Empleado jefe) {
+        public Departamento(int codD, String nomD, String jefe) {
                 codigo = codD;
                 nombre = nomD;
                 JefeDepartamento = jefe;
