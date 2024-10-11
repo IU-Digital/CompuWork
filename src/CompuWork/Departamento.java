@@ -4,10 +4,12 @@ public class Departamento {
 
         private int codigo;
         private String nombre;
+        private Empleado JefeDepartamento;
 
-        public Departamento(int codD, String nomD) {
+        public Departamento(int codD, String nomD, Empleado jefe) {
                 codigo = codD;
                 nombre = nomD;
+                JefeDepartamento = jefe;
         }
 
         public void modificarDepartamento() {
