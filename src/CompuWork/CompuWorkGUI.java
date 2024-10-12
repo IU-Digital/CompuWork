@@ -24,9 +24,76 @@ public class CompuWorkGUI extends JFrame {
         setTitle("CompuWork");
         setSize(400, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(0, 2));
+        setLocationRelativeTo(null);
+        setLayout(new GridLayout(0, 1 ));
+
+        JLabel bienvenido = new JLabel("BIENVENIDO A COMPUWORK");
+        bienvenido.setHorizontalAlignment(SwingConstants.CENTER); // Centrar JLabel
+        add(bienvenido);
+
+        add(Box.createVerticalStrut(10));
+
+        // Empleado
+
+        JLabel gestionEmpleados = new JLabel("GESTIÓN DE EMPLEADOS");
+        gestionEmpleados.setHorizontalAlignment(SwingConstants.CENTER); // Centrar JLabel
+        add(gestionEmpleados);
+
+        add(Box.createVerticalStrut(10));
+
+        add(new JLabel("CREAR EMPLEADO"));
+
+
+        add(Box.createVerticalStrut(10));
+
+        add(new JLabel("Código Empleado:"));
+        codigoEmpleadoField = new JTextField();
+        add(codigoEmpleadoField);
+
+        add(new JLabel("Nombre Empleado:"));
+        nombreEmpleadoField = new JTextField();
+        add(nombreEmpleadoField);
+
+        add(new JLabel("Departamento Empleado:"));
+        departamentoEmpleadoField = new JTextField();
+        add(departamentoEmpleadoField);
+
+        add(new JLabel("Salario Empleado:"));
+        salarioEmpleadoField = new JTextField();
+        add(salarioEmpleadoField);
+
+
+        JButton crearEmpleadoButton = new JButton("Crear Empleado");
+        crearEmpleadoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Lógica para crear empleado
+                int codE = Integer.parseInt(codigoEmpleadoField.getText());
+                String nomE = nombreEmpleadoField.getText();
+                String depE = departamentoEmpleadoField.getText();
+                double sal = Double.parseDouble(salarioEmpleadoField.getText());
+                String des = desempenoEmpleadoField.getText();
+                Empleado E = new Empleado(codE, nomE, depE, sal, null, "Tipo", new Date());
+                // Agregar a la lista de empleados
+                // ListaEmpleados.add(E);
+
+                JOptionPane.showMessageDialog(null, "Empleado Creado con exito:\n" +
+                        "Código: " + codE + "\n" +
+                        "Nombre: " + nomE + "\n" +
+                        "Departamento: " + depE + "\n" +
+                        "Salario: " + sal + "\n");
+            }
+        });
+        add(crearEmpleadoButton);
+
+        add(Box.createVerticalStrut(10));
 
         // Departamento
+        add(new JLabel("2. GESTIÓN DE DEPARTAMENTOS"));
+
+        add(Box.createVerticalStrut(10));
+
+
         add(new JLabel("Código Departamento:"));
         codigoDepartamentoField = new JTextField();
         add(codigoDepartamentoField);
@@ -50,46 +117,14 @@ public class CompuWorkGUI extends JFrame {
         });
         add(crearDepartamentoButton);
 
-        // Empleado
-        add(new JLabel("Código Empleado:"));
-        codigoEmpleadoField = new JTextField();
-        add(codigoEmpleadoField);
-
-        add(new JLabel("Nombre Empleado:"));
-        nombreEmpleadoField = new JTextField();
-        add(nombreEmpleadoField);
-
-        add(new JLabel("Departamento Empleado:"));
-        departamentoEmpleadoField = new JTextField();
-        add(departamentoEmpleadoField);
-
-        add(new JLabel("Salario Empleado:"));
-        salarioEmpleadoField = new JTextField();
-        add(salarioEmpleadoField);
-
-        add(new JLabel("Desempeño Empleado:"));
-        desempenoEmpleadoField = new JTextField();
-        add(desempenoEmpleadoField);
-
-        JButton crearEmpleadoButton = new JButton("Crear Empleado");
-        crearEmpleadoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Lógica para crear empleado
-                int codE = Integer.parseInt(codigoEmpleadoField.getText());
-                String nomE = nombreEmpleadoField.getText();
-                String depE = departamentoEmpleadoField.getText();
-                double sal = Double.parseDouble(salarioEmpleadoField.getText());
-                String des = desempenoEmpleadoField.getText();
-                Empleado E = new Empleado(codE, nomE, depE, sal, des, "Tipo", new Date());
-                // Agregar a la lista de empleados
-                // ListaEmpleados.add(E);
-                JOptionPane.showMessageDialog(null, "Empleado creado con éxito");
-            }
-        });
-        add(crearEmpleadoButton);
+        add(Box.createVerticalStrut(10));
 
         // Reporte de Desempeño
+
+        add(new JLabel("3. GESTIÓN DE REPORTES DE DESEMPEÑO"));
+
+        add(Box.createVerticalStrut(10));
+
         add(new JLabel("Código Reporte:"));
         codigoReporteField = new JTextField();
         add(codigoReporteField);
