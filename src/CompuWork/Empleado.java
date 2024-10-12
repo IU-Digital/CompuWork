@@ -37,4 +37,7 @@ public class Empleado {
         // Lógica para mostrar información del empleado
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
 }
