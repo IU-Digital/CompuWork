@@ -71,7 +71,6 @@ public class CompuWorkGUI extends JFrame {
                 String nomE = nombreEmpleadoField.getText();
                 String depE = departamentoEmpleadoField.getText();
                 double sal = Double.parseDouble(salarioEmpleadoField.getText());
-                String des = desempenoEmpleadoField.getText();
                 Empleado E = new Empleado(codE, nomE, depE, sal, null, "Tipo", new Date());
                 // Agregar a la lista de empleados
                 // ListaEmpleados.add(E);
