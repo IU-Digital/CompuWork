@@ -14,7 +14,6 @@ public class CompuWorkGUI extends JFrame {
     private JTextField nombreEmpleadoField;
     private JTextField departamentoEmpleadoField;
     private JTextField salarioEmpleadoField;
-    private JTextField desempenoEmpleadoField;
     private JTextField codigoReporteField;
     private JTextField nombreReporteField;
     private JTextField fechaReporteField;
