@@ -15,7 +15,14 @@ public class Empleado {
     // Constructores, getters y setters
 
     public Empleado(int codE, String nomE, String dep, double sal, String des, String tip, Date fecha) {
-        // Lógica para crear un nuevo empleado
+       codigo = codE;
+       nombre = nomE;
+       departamento = dep;
+       salario = sal;
+       desempeño = des;
+       tipo = tip;
+       fechaInicio = fecha;
+
     }
 
     public void modificarEmpleado() {

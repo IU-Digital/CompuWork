@@ -1,10 +1,16 @@
 package CompuWork;
 
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+ArrayList<Empleado> ListaEmpleados = new ArrayList<Empleado>();
+ArrayList<Departamento> ListaDepartamentos = new ArrayList<Departamento>();
+ArrayList<ReporteDesempeno> ListaReportes = new ArrayList<ReporteDesempeno>();
+
 
 public class CompuWorkGUI extends JFrame {
 
@@ -15,7 +21,7 @@ public class CompuWorkGUI extends JFrame {
     private JTextField departamentoEmpleadoField;
     private JTextField salarioEmpleadoField;
     private JTextField codigoReporteField;
-    private JTextField nombreReporteField;
+    private JTextField empleadoReporteField;
     private JTextField fechaReporteField;
     private JTextField rendimientoReporteField;
 
@@ -66,14 +72,12 @@ public class CompuWorkGUI extends JFrame {
         crearEmpleadoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Lógica para crear empleado
                 int codE = Integer.parseInt(codigoEmpleadoField.getText());
                 String nomE = nombreEmpleadoField.getText();
                 String depE = departamentoEmpleadoField.getText();
                 double sal = Double.parseDouble(salarioEmpleadoField.getText());
                 Empleado E = new Empleado(codE, nomE, depE, sal, null, "Tipo", new Date());
-                // Agregar a la lista de empleados
-                // ListaEmpleados.add(E);
+                ListaEmpleados.add(E);
 
                 JOptionPane.showMessageDialog(null, "Empleado Creado con exito:\n" +
                         "Código: " + codE + "\n" +
@@ -104,13 +108,13 @@ public class CompuWorkGUI extends JFrame {
         crearDepartamentoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Lógica para crear departamento
                 int codD = Integer.parseInt(codigoDepartamentoField.getText());
                 String nomD = nombreDepartamentoField.getText();
                 Departamento D = new Departamento(codD, nomD, null);
-                // Agregar a la lista de departamentos
-                // ListaDepartamentos.add(D);
-                JOptionPane.showMessageDialog(null, "Departamento creado con éxito");
+                ListaDepartamentos.add(D);
+                JOptionPane.showMessageDialog(null, "Departamento creado con éxito"+
+                        "Código: " + codD + "\n" +
+                        "Nombre: " + nomD + "\n" );
             }
         });
         add(crearDepartamentoButton);
@@ -127,9 +131,9 @@ public class CompuWorkGUI extends JFrame {
         codigoReporteField = new JTextField();
         add(codigoReporteField);
 
-        add(new JLabel("Nombre Empleado:"));
-        nombreReporteField = new JTextField();
-        add(nombreReporteField);
+        add(new JLabel("Código del Empleado:"));
+        empleadoReporteField = new JTextField();
+        add(empleadoReporteField);
 
         add(new JLabel("Fecha Reporte:"));
         fechaReporteField = new JTextField();
@@ -145,12 +149,11 @@ public class CompuWorkGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Lógica para crear reporte
                 int codR = Integer.parseInt(codigoReporteField.getText());
-                String nomR = nombreReporteField.getText();
+                String nomR = empleadoReporteField.getText();
                 String fecha = fechaReporteField.getText();
                 String rend = rendimientoReporteField.getText();
                 ReporteDesempeno RD = new ReporteDesempeno(codR, nomR, fecha, rend);
-                // Agregar a la lista de reportes
-                // ListaReportes.add(RD);
+                ListaReportes.add(RD);
                 JOptionPane.showMessageDialog(null, "Reporte creado con éxito");
             }
         });
